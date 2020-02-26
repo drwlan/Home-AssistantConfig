@@ -1,0 +1,22 @@
+- id: '1582732211164'
+  alias: test
+  description: ''
+  trigger:
+  - at: '17:55'
+    platform: time
+  condition: []
+  action:
+  - data:
+      message: Test up.
+    service: persistent_notification.create
+- id: '1582732714922'
+  alias: Close rolls from sun
+  description: Закрыть ролеты на закате.
+  trigger:
+  - event: sunset
+    platform: sun
+  condition: []
+  action:
+  - data: {}
+    entity_id: switch.all_rolls_close
+    service: switch.turn_on

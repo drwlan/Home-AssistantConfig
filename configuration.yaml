@@ -1,0 +1,29 @@
+homeassistant:
+  latitude: 47.905408
+  longitude: 33.463909
+  elevation: 107
+  unit_system: metric
+  time_zone: Europe/Kiev
+  name: Home
+#  whitelist_external_dirs:
+#    - /usr/var/dumping-ground
+#    - /tmp
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+#default_config:
+
+# Activate the configuration editor
+config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
